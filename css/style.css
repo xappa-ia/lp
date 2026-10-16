@@ -97,11 +97,11 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .hero-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 56px; align-items: center; }
 
 .pill {
-  display: inline-flex; align-items: center; gap: 10px; padding: 7px 16px 7px 8px;
+  display: inline-flex; align-items: center; gap: 10px; padding: 6px;
   border-radius: 999px; background: var(--surface); border: 1px solid var(--line);
   font-size: .875rem; font-weight: 600; color: var(--ink-soft); box-shadow: var(--shadow-sm);
 }
-.pill b { padding: 3px 10px; border-radius: 999px; background: var(--accent-soft); color: #8a5300; font-size: .75rem; letter-spacing: .02em; }
+.pill b { padding: 6px 14px; border-radius: 999px; background: var(--accent-soft); color: #8a5300; font-size: .75rem; letter-spacing: .02em; }
 
 .hero h1 { margin-top: 24px; font-size: clamp(2.6rem, 6vw, 4.8rem); }
 .hero h1 em { font-style: normal; color: var(--brand); position: relative; white-space: nowrap; }
@@ -209,6 +209,15 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .seg li::before { content: "✓"; color: var(--brand); font-weight: 700; }
 .seg-note { margin-top: 28px; text-align: center; color: var(--ink-soft); }
 .seg-note a { color: var(--brand); font-weight: 600; }
+
+/* ---------- Camadas da plataforma ---------- */
+.layers { margin: 56px auto 0; max-width: 1000px; display: grid; gap: 14px; padding: clamp(18px, 3vw, 32px); border-radius: 36px; background: var(--surface); border: 1px solid var(--line); box-shadow: var(--shadow-sm); }
+.layer { padding: 18px; text-align: center; border-radius: 18px; font-weight: 700; font-size: 1.2rem; letter-spacing: -0.02em; color: var(--brand-deep); background: var(--brand-soft); border: 1px solid #c3e1e8; }
+.layer.ai { background: linear-gradient(120deg, var(--brand), var(--brand-deep)); color: #fff; border: 0; }
+.seg-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.seg-row div { padding: 14px 12px; border-radius: 16px; text-align: center; background: var(--brand-deep); color: #fff; }
+.seg-row b { display: block; font-size: 1rem; letter-spacing: -0.02em; }
+.seg-row span { display: block; margin-top: 4px; padding: 4px 8px; border-radius: 99px; background: rgb(255 255 255 / 14%); font-size: .72rem; font-weight: 600; }
 
 /* ---------- Faixa de segmentos ---------- */
 .band { padding: 8px 0 72px; text-align: center; }
@@ -399,6 +408,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   .float.notif { right: -6%; width: 200px; }
   .float.stat { display: none; }
   .seg-grid { grid-template-columns: 1fr; }
+  .seg-row { grid-template-columns: 1fr 1fr; }
   .dash-body { grid-template-columns: repeat(2, 1fr); }
   .dash-body .col:nth-child(3) { display: none; }
   .float.sla { left: -4%; width: 200px; }
