@@ -98,10 +98,10 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 
 .pill {
   display: inline-flex; align-items: center; gap: 10px; padding: 6px;
-  border-radius: 999px; background: var(--surface); border: 1px solid var(--line);
+  max-width: 100%; border-radius: 26px; background: var(--surface); border: 1px solid var(--line);
   font-size: .875rem; font-weight: 600; color: var(--ink-soft); box-shadow: var(--shadow-sm);
 }
-.pill b { padding: 6px 14px; border-radius: 999px; background: var(--accent-soft); color: #8a5300; font-size: .75rem; letter-spacing: .02em; }
+.pill b { padding: 6px 14px; line-height: 1.4; border-radius: 22px; background: var(--accent-soft); color: #8a5300; font-size: .75rem; letter-spacing: .02em; }
 
 .hero h1 { margin-top: 24px; font-size: clamp(2.6rem, 6vw, 4.8rem); }
 .hero h1 em { font-style: normal; color: var(--brand); position: relative; white-space: nowrap; }
@@ -199,7 +199,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .caption { margin-top: 12px; font-size: .78rem; color: var(--ink-mute); text-align: center; }
 
 /* ---------- Segmentos ---------- */
-.seg-grid { margin-top: 56px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+.seg-grid { margin-top: 56px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
 .seg { padding: 28px; border-radius: var(--radius-lg); background: var(--surface); border: 1px solid var(--line); box-shadow: var(--shadow-sm); display: flex; flex-direction: column; }
 .seg .emoji { width: 52px; height: 52px; border-radius: 16px; display: grid; place-items: center; font-size: 1.6rem; background: var(--accent-soft); }
 .seg h3 { margin-top: 20px; font-size: 1.3rem; }
@@ -214,7 +214,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .layers { margin: 56px auto 0; max-width: 1000px; display: grid; gap: 14px; padding: clamp(18px, 3vw, 32px); border-radius: 36px; background: var(--surface); border: 1px solid var(--line); box-shadow: var(--shadow-sm); }
 .layer { padding: 18px; text-align: center; border-radius: 18px; font-weight: 700; font-size: 1.2rem; letter-spacing: -0.02em; color: var(--brand-deep); background: var(--brand-soft); border: 1px solid #c3e1e8; }
 .layer.ai { background: linear-gradient(120deg, var(--brand), var(--brand-deep)); color: #fff; border: 0; }
-.seg-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.seg-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
 .seg-row div { padding: 14px 12px; border-radius: 16px; text-align: center; background: var(--brand-deep); color: #fff; }
 .seg-row b { display: block; font-size: 1rem; letter-spacing: -0.02em; }
 .seg-row span { display: block; margin-top: 4px; padding: 4px 8px; border-radius: 99px; background: rgb(255 255 255 / 14%); font-size: .72rem; font-weight: 600; }
@@ -429,6 +429,14 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   .hero .stage .float.sla { order: 3; }
   .hero .stage .float.notif { order: 4; }
   .hero .stage .mascot { order: 5; width: 96px; }
+}
+
+/* Item sozinho na última linha de uma grade de 2 colunas fica centralizado */
+@media (max-width: 960px) and (min-width: 561px) {
+  .seg-grid > .seg:last-child:nth-child(odd) { grid-column: 1 / -1; justify-self: center; width: calc(50% - 9px); }
+}
+@media (max-width: 560px) {
+  .seg-row > div:last-child:nth-child(odd) { grid-column: 1 / -1; justify-self: center; width: calc(50% - 6px); }
 }
 
 @media (prefers-reduced-motion: reduce) {
